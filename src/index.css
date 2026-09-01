@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Host Grotesk', 'Inter', sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Custom Minimalist Scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 0px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+}
+
+/* Minimal Black & White Aesthetics */
+.bw-border {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.bw-card {
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s ease;
+}
+
+.bw-card:hover {
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.bw-btn {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: 1px solid #ffffff;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.bw-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.bw-btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.bw-btn-outline:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.bw-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888888;
+  transition: color 0.3s ease;
+}
+
+.bw-link:hover {
+  color: #ffffff;
+}
+
+/* Floating Image Follower */
+.floating-cursor-preview-bw {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  width: 320px;
+  height: 220px;
+  overflow: hidden;
+  border: 1px solid #ffffff;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.95);
+  transition: opacity 0.3s ease, transform 0.15s ease-out;
+  transform: translate(-50%, -50%);
+  background: #0a0a0a;
+}
