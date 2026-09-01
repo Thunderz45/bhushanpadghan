@@ -36,30 +36,34 @@ const SOCIAL_LINKS = [
 export const HeroSection = () => {
   const heroRef = useRef(null);
 
-  /* Cursor tracking for subtle interactive parallax */
+  /* Silky smooth cursor tracking physics */
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const sx = useSpring(mouseX, { stiffness: 48, damping: 15 });
-  const sy = useSpring(mouseY, { stiffness: 48, damping: 15 });
+  const sx = useSpring(mouseX, { stiffness: 35, damping: 20 });
+  const sy = useSpring(mouseY, { stiffness: 35, damping: 20 });
 
   const onMouseMove = (e) => {
     mouseX.set((e.clientX / window.innerWidth - 0.5) * 2);
     mouseY.set((e.clientY / window.innerHeight - 0.5) * 2);
   };
 
-  /* Scroll-scrubbed exit transforms */
+  /* Scroll-scrubbed Parallax Transforms */
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start'],
   });
 
-  const videoScale  = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
-  const videoOpacity= useTransform(scrollYProgress, [0, 0.7, 1], [1, 0.5, 0]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.5, 0.8], [1, 1, 0]);
-  const textY       = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  /* Background Video Parallax Depth & Scale */
+  const videoY     = useTransform(scrollYProgress, [0, 1], ['0%', '22%']);
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+  const videoOpacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 0.6, 0]);
 
-  const textX = useTransform(sx, [-1, 1], [-8, 8]);
-  const textYParallax = useTransform(sy, [-1, 1], [-6, 6]);
+  /* Typography Parallax Float & Fade */
+  const textOpacity = useTransform(scrollYProgress, [0, 0.5, 0.85], [1, 0.9, 0]);
+  const textYScroll = useTransform(scrollYProgress, [0, 1], [0, -85]);
+
+  const textXParallax = useTransform(sx, [-1, 1], [-12, 12]);
+  const textYParallax = useTransform(sy, [-1, 1], [-10, 10]);
 
   const nameChars = Array.from('Bhushan Padghan');
 
@@ -71,10 +75,10 @@ export const HeroSection = () => {
       style={{ height: '100vh', minHeight: 620, background: '#050505' }}
       onMouseMove={onMouseMove}
     >
-      {/* ── SINGLE FULL-BLEED BACKGROUND VIDEO ── */}
+      {/* ── SINGLE FULL-BLEED BACKGROUND VIDEO WITH SMOOTH PARALLAX ── */}
       <motion.div
         className="absolute inset-0 w-full h-full pointer-events-none"
-        style={{ scale: videoScale, opacity: videoOpacity }}
+        style={{ y: videoY, scale: videoScale, opacity: videoOpacity }}
       >
         <video
           src="/work/video/12937422-hd_1920_1080_30fps.mp4"
@@ -89,10 +93,12 @@ export const HeroSection = () => {
             }
           }}
           className="w-full h-full object-cover"
-          style={{ filter: 'brightness(0.95)' }}
+          style={{ filter: 'brightness(0.85) contrast(1.05)' }}
         />
-        {/* 10% Black Overlay */}
-        <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+        {/* 50% Black Overlay for clean high contrast */}
+        <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+        {/* Subtle Vignette Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
       </motion.div>
 
       {/* ══ CENTREPIECE TYPOGRAPHY & SOCIAL CONNECT ══ */}
@@ -100,33 +106,33 @@ export const HeroSection = () => {
         <motion.div
           className="flex flex-col items-center text-center"
           style={{
-            x: textX,
-            y: useTransform([textYParallax, textY], ([p, s]) => p + s),
+            x: textXParallax,
+            y: useTransform([textYParallax, textYScroll], ([p, s]) => p + s),
             opacity: textOpacity,
           }}
         >
-          {/* Display Name */}
+          {/* Display Name with Staggered Entrance */}
           <h1
-            className="font-serif italic text-white leading-none whitespace-nowrap mb-6"
+            className="font-serif italic text-white leading-none whitespace-nowrap mb-6 drop-shadow-2xl"
             style={{ fontSize: 'clamp(3.2rem, 8.5vw, 8rem)', fontWeight: 400, letterSpacing: '-0.01em' }}
             aria-label="Bhushan Padghan"
           >
             {nameChars.map((char, i) => (
               <motion.span
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.05 + i * 0.03, ease: [0.25, 0.1, 0.25, 1] }}
-                style={{ display: 'inline' }}
+                transition={{ duration: 0.65, delay: 0.05 + i * 0.03, ease: [0.25, 0.1, 0.25, 1] }}
+                style={{ display: 'inline-block' }}
               >
-                {char}
+                {char === ' ' ? '\u00A0' : char}
               </motion.span>
             ))}
           </h1>
 
           {/* Role Subtitle */}
           <motion.p
-            className="font-mono text-neutral-300 tracking-[0.32em] uppercase mb-7"
+            className="font-mono text-neutral-200 tracking-[0.32em] uppercase mb-7 drop-shadow-md"
             style={{ fontSize: 'clamp(0.65rem, 1.15vw, 0.85rem)' }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -137,10 +143,10 @@ export const HeroSection = () => {
 
           {/* Original Full Color Social Logos Bar */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.85, ease: 'easeOut' }}
-            className="flex items-center gap-5 sm:gap-7 px-6 py-3 rounded-full bg-black/50 backdrop-blur-lg border border-white/15 shadow-xl"
+            className="flex items-center gap-5 sm:gap-7 px-6 py-3 rounded-full bg-black/60 backdrop-blur-xl border border-white/20 shadow-2xl"
           >
             {SOCIAL_LINKS.map(({ name, url, icon: Icon, color, glow }) => (
               <a
@@ -155,7 +161,7 @@ export const HeroSection = () => {
                   className="w-5 h-5 sm:w-6 sm:h-6 transition-all duration-300"
                   style={{
                     color: color,
-                    filter: `drop-shadow(0 0 6px ${glow})`,
+                    filter: `drop-shadow(0 0 8px ${glow})`,
                   }}
                 />
                 {/* Tooltip */}
@@ -181,7 +187,7 @@ export const HeroSection = () => {
       >
         <motion.span
           className="block"
-          style={{ width: 1, height: 28, background: 'rgba(255,255,255,0.35)' }}
+          style={{ width: 1, height: 28, background: 'rgba(255,255,255,0.45)' }}
           animate={{ scaleY: [1, 0.35, 1] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
         />
@@ -190,7 +196,7 @@ export const HeroSection = () => {
           animate={{ y: [0, 5, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
         >
-          <path d="M1 1L7 7L13 1" stroke="rgba(255,255,255,0.6)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M1 1L7 7L13 1" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
         </motion.svg>
       </motion.a>
     </section>
