@@ -4,6 +4,7 @@ import { Loader } from './components/Loader';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { WhatIDoSection } from './components/WhatIDoSection';
+import { GallerySection } from './components/GallerySection';
 import { Footer } from './components/Footer';
 
 function ScrollProgressBar() {
@@ -43,6 +44,7 @@ export const App = () => {
       <main>
         <HeroSection />
         <WhatIDoSection />
+        <GallerySection />
       </main>
       <Footer />
     </div>
