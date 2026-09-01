@@ -3,10 +3,8 @@ import { portfolioData } from '../data/portfolioData';
 import { Mail, ExternalLink } from 'lucide-react';
 
 const NAV_ITEMS = [
-  { label: 'INTRO',   href: '#intro'   },
-  { label: 'WORK',    href: '#work-page' },
-  { label: 'ABOUT',   href: '#work'    },
-  { label: 'CONTACT', href: '#contact' },
+  { label: 'INTRO',     href: '#intro' },
+  { label: 'WHAT I DO', href: '#work'  },
 ];
 
 export const Navbar = () => {

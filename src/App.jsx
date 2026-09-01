@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Loader } from './components/Loader';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { WhatIDoSection } from './components/WhatIDoSection';
-import { WorkSection } from './components/WorkSection';
-import { CelestialPixelPage } from './components/CelestialPixelPage';
 import { Footer } from './components/Footer';
 
 function ScrollProgressBar() {
@@ -31,33 +29,6 @@ function ScrollProgressBar() {
 
 export const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [activePage, setActivePage] = useState('home'); // 'home' | 'celestial-pixel'
-
-  useEffect(() => {
-    const handleHash = () => {
-      if (window.location.hash === '#celestial-pixel') {
-        setActivePage('celestial-pixel');
-      }
-    };
-    window.addEventListener('hashchange', handleHash);
-    return () => window.removeEventListener('hashchange', handleHash);
-  }, []);
-
-  const handleSelectProject = (projectId) => {
-    if (projectId === 'celestial-pixel') {
-      window.location.hash = 'celestial-pixel';
-      setActivePage('celestial-pixel');
-    }
-  };
-
-  const handleBackToWork = () => {
-    window.location.hash = 'work-page';
-    setActivePage('home');
-    setTimeout(() => {
-      const el = document.getElementById('work-page');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  };
 
   return (
     <div className="min-h-screen bg-[#0d0d0d] text-[#ffffff] font-sans selection:bg-white selection:text-black">
@@ -68,20 +39,12 @@ export const App = () => {
       </AnimatePresence>
 
       <ScrollProgressBar />
-
-      {activePage === 'celestial-pixel' ? (
-        <CelestialPixelPage onBack={handleBackToWork} />
-      ) : (
-        <>
-          <Navbar />
-          <main>
-            <HeroSection />
-            <WhatIDoSection />
-            <WorkSection onSelectProject={handleSelectProject} />
-          </main>
-          <Footer />
-        </>
-      )}
+      <Navbar />
+      <main>
+        <HeroSection />
+        <WhatIDoSection />
+      </main>
+      <Footer />
     </div>
   );
 };
