@@ -4,8 +4,8 @@ import { Mail, ExternalLink } from 'lucide-react';
 
 const NAV_ITEMS = [
   { label: 'INTRO',   href: '#intro'   },
-  { label: 'WORK',    href: '#work'    },
-  { label: 'ABOUT',   href: '#about'   },
+  { label: 'WORK',    href: '#work-page' },
+  { label: 'ABOUT',   href: '#work'    },
   { label: 'CONTACT', href: '#contact' },
 ];
 
