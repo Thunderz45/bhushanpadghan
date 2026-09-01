@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
 
-/* ── All pure image assets from College, ESG Global, IMC, T-HUB, and public work folders ── */
+/* ── Authentic event photos from College, ESG Global, IMC, T-HUB ── */
 const GALLERY_IMAGES = [
   { id: 'img-1', src: '/work/T-HUB/1742577877638.jpeg', aspect: 'aspect-[3/4]', span: 'col-span-1' },
   { id: 'img-2', src: '/work/ESG Global/1742578266322.jpeg', aspect: 'aspect-[16/10]', span: 'col-span-1 sm:col-span-2' },
@@ -20,9 +20,6 @@ const GALLERY_IMAGES = [
   { id: 'img-14', src: '/work/ESG Global/1742578291400.jpeg', aspect: 'aspect-[16/9]', span: 'col-span-1 sm:col-span-2' },
   { id: 'img-15', src: '/work/T-HUB/1763043953313.jpeg', aspect: 'aspect-[3/4]', span: 'col-span-1' },
   { id: 'img-16', src: '/work/1766305678604.jpeg', aspect: 'aspect-[4/3]', span: 'col-span-1' },
-  { id: 'img-17', src: '/work/video/pexels-palefire-11447031.jpg', aspect: 'aspect-[3/4]', span: 'col-span-1' },
-  { id: 'img-18', src: '/work/video/pexels-walls-io-440716388-15595296.jpg', aspect: 'aspect-[16/10]', span: 'col-span-1 sm:col-span-2' },
-  { id: 'img-19', src: '/work/video/pexels-dkomov-34804000.jpg', aspect: 'aspect-square', span: 'col-span-1' },
 ];
 
 export const GallerySection = () => {
@@ -42,7 +39,7 @@ export const GallerySection = () => {
           </h2>
         </div>
 
-        {/* ── RANDOM / ASYMMETRIC MASONRY IMAGE GRID (PURE IMAGES ONLY, NO TEXT/VIDEO) ── */}
+        {/* ── RANDOM / ASYMMETRIC MASONRY IMAGE GRID (PURE REAL EVENT PHOTOS ONLY) ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 items-start">
           {GALLERY_IMAGES.map((item, idx) => (
             <motion.div
