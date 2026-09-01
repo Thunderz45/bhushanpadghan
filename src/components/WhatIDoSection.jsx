@@ -207,8 +207,8 @@ export const WhatIDoSection = () => {
             <AnimatedDescription />
           </div>
 
-          {/* ── RIGHT: 2-Column Grid with Outer & Inner Grid Borders (Reference Style) ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 border border-white/15 rounded-none overflow-hidden bg-black/40 backdrop-blur-sm">
+          {/* ── RIGHT: 2-Column Grid with Grid Borders ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 border border-white/15 rounded-none bg-transparent">
             {SKILLS.map((skill, i) => {
               // Determine border lines for exact mosaic grid appearance
               const isEven = i % 2 === 0;
