@@ -1,5 +1,6 @@
-import React from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
+import { Loader } from './components/Loader';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { WhatIDoSection } from './components/WhatIDoSection';
@@ -27,8 +28,16 @@ function ScrollProgressBar() {
 }
 
 export const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <div className="min-h-screen bg-[#0d0d0d] text-[#ffffff] font-sans selection:bg-white selection:text-black">
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <Loader key="loader" onComplete={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
+
       <ScrollProgressBar />
       <Navbar />
       <main>
