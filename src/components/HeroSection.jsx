@@ -77,7 +77,7 @@ export const HeroSection = () => {
         style={{ scale: videoScale, opacity: videoOpacity }}
       >
         <video
-          src="/work/video/14522345_3840_2160_25fps.mp4"
+          src="/work/video/12937422-hd_1920_1080_30fps.mp4"
           autoPlay
           loop
           muted
@@ -89,10 +89,10 @@ export const HeroSection = () => {
             }
           }}
           className="w-full h-full object-cover"
-          style={{ filter: 'brightness(0.55) contrast(1.05)' }}
+          style={{ filter: 'brightness(0.95)' }}
         />
-        {/* Dark Vignette Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70 pointer-events-none" />
+        {/* 10% Black Overlay */}
+        <div className="absolute inset-0 bg-black/10 pointer-events-none" />
       </motion.div>
 
       {/* ══ CENTREPIECE TYPOGRAPHY & SOCIAL CONNECT ══ */}
