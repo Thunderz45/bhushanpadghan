@@ -31,14 +31,14 @@ export const Navbar = () => {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 pointer-events-none"
+      className="fixed top-0 left-0 right-0 w-full z-50 pointer-events-none"
       style={{
-        background: 'rgba(0,0,0,0.10)',
-        backdropFilter: 'blur(6px)',
-        WebkitBackdropFilter: 'blur(6px)',
+        background: 'rgba(0,0,0,0.15)',
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
       }}
     >
-      <div className="flex items-center justify-between px-6 sm:px-8 py-5">
+      <div className="w-full flex items-center justify-between px-6 sm:px-10 py-5">
 
         {/* ── Wordmark (upper-left, italic serif) */}
         <a
