@@ -4,10 +4,3 @@ dist/
 *.log
 .env
 .env.local
-
-# Exclude large media files from git (serve locally or via CDN)
-public/work/video/*.mp4
-public/work/video/*.mov
-public/work/T-HUB/*.jpeg
-public/work/T-HUB/*.jpg
-public/work/dist/
