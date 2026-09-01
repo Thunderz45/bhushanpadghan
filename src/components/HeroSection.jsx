@@ -1,5 +1,30 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion';
+import { Youtube, Linkedin, Github, Instagram } from 'lucide-react';
+import { portfolioData } from '../data/portfolioData';
+
+const SOCIAL_LINKS = [
+  {
+    name: 'YouTube',
+    url: 'https://www.youtube.com/@bhushanpadghan9647',
+    icon: Youtube,
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/bhushan-padghan-049772284/',
+    icon: Linkedin,
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/Thunderz45',
+    icon: Github,
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/bhushanpatil_045/',
+    icon: Instagram,
+  },
+];
 
 export const HeroSection = () => {
   const heroRef = useRef(null);
@@ -63,7 +88,7 @@ export const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70 pointer-events-none" />
       </motion.div>
 
-      {/* ══ CENTREPIECE TYPOGRAPHY ══ */}
+      {/* ══ CENTREPIECE TYPOGRAPHY & SOCIAL CONNECT ══ */}
       <div className="relative z-30 select-none flex flex-col items-center justify-center text-center px-4">
         <motion.div
           className="flex flex-col items-center text-center"
@@ -94,7 +119,7 @@ export const HeroSection = () => {
 
           {/* Role Subtitle */}
           <motion.p
-            className="font-mono text-neutral-300 tracking-[0.32em] uppercase"
+            className="font-mono text-neutral-300 tracking-[0.32em] uppercase mb-7"
             style={{ fontSize: 'clamp(0.65rem, 1.15vw, 0.85rem)' }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -102,6 +127,31 @@ export const HeroSection = () => {
           >
             FOUNDER&nbsp;&nbsp;•&nbsp;&nbsp;AI DEVELOPER&nbsp;&nbsp;•&nbsp;&nbsp;AI SPECIALIST
           </motion.p>
+
+          {/* Social Connect Bar (YouTube, LinkedIn, GitHub, Instagram) */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.85, ease: 'easeOut' }}
+            className="flex items-center gap-5 sm:gap-6 px-6 py-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15"
+          >
+            {SOCIAL_LINKS.map(({ name, url, icon: Icon }) => (
+              <a
+                key={name}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={name}
+                className="text-neutral-400 hover:text-white hover:scale-115 transition-all duration-300 flex items-center justify-center p-1 group relative"
+              >
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 font-mono text-[9px] uppercase tracking-widest bg-black/90 text-white px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap border border-white/20">
+                  {name}
+                </span>
+              </a>
+            ))}
+          </motion.div>
+
         </motion.div>
       </div>
 

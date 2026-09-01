@@ -23,7 +23,9 @@ export const portfolioData = {
     },
     email: "info@bhushanpadghan.online",
     linkedin: "https://www.linkedin.com/in/bhushan-padghan-049772284/",
-    github: "https://github.com/bhushanpadghan",
+    github: "https://github.com/Thunderz45",
+    youtube: "https://www.youtube.com/@bhushanpadghan9647",
+    instagram: "https://www.instagram.com/bhushanpatil_045/",
     website: "https://bhushanpadghan.online",
     available: true,
     availableText: "Available for AI Contracts & Tech Leadership"
