@@ -58,9 +58,21 @@ function Tile({ tile, sx, sy, scrollProgress }) {
       }}
     >
       {tile.type === 'video' ? (
-        <video src={tile.src} autoPlay loop muted playsInline
+        <video
+          src={tile.src}
+          autoPlay
+          loop
+          muted
+          playsInline
+          ref={(el) => {
+            if (el) {
+              el.muted = true;
+              el.play().catch(() => {});
+            }
+          }}
           className="w-full h-full object-cover"
-          style={{ filter: 'grayscale(1) brightness(0.72)' }} />
+          style={{ filter: 'grayscale(1) brightness(0.72)' }}
+        />
       ) : (
         <img src={tile.src} alt=""
           className="w-full h-full object-cover"

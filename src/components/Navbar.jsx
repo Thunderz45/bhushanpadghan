@@ -38,19 +38,19 @@ export const Navbar = () => {
         WebkitBackdropFilter: 'blur(6px)',
       }}
     >
-      <div className="flex items-start justify-between px-6 sm:px-8 pt-7 pb-4">
+      <div className="flex items-center justify-between px-6 sm:px-8 py-5">
 
-        {/* ── Wordmark (upper-left, italic serif, over left photo tile) */}
+        {/* ── Wordmark (upper-left, italic serif) */}
         <a
           href="#intro"
-          className="font-serif italic text-white text-lg sm:text-xl font-normal tracking-tight hover:text-neutral-300 transition-colors pointer-events-auto"
+          className="font-serif italic text-white text-lg sm:text-xl font-normal tracking-tight hover:text-neutral-300 transition-colors pointer-events-auto shrink-0"
           style={{ lineHeight: 1 }}
         >
           Bhushan Padghan
         </a>
 
-        {/* ── Nav (upper-right, no background scrim) */}
-        <nav className="flex items-center gap-7 font-mono pointer-events-auto">
+        {/* ── Nav (upper-right) */}
+        <nav className="flex items-center gap-3 sm:gap-7 font-mono pointer-events-auto">
 
           {NAV_ITEMS.map(({ label, href }) => {
             const isActive = active === label;
