@@ -1,11 +1,24 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Play, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Play, ArrowUpRight, Sparkles, ExternalLink } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export const WorkSection = ({ onSelectProject }) => {
   const labelRef = useRef(null);
   const labelInView = useInView(labelRef, { once: true, margin: '-60px' });
+  const videoRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
   return (
     <section
@@ -31,7 +44,7 @@ export const WorkSection = ({ onSelectProject }) => {
             </h2>
           </div>
           <p className="font-mono text-xs text-neutral-400 max-w-xs tracking-wide leading-relaxed">
-            Click on any project card or video to view full project architecture and live previews.
+            Move cursor over video to play preview. Click video to open full Celestial Pixel project page.
           </p>
         </div>
 
@@ -41,37 +54,47 @@ export const WorkSection = ({ onSelectProject }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           onClick={() => onSelectProject('celestial-pixel')}
-          className="group relative w-full rounded-2xl overflow-hidden border border-white/15 bg-white/[0.02] hover:border-white/40 transition-all duration-500 cursor-pointer mb-16"
+          className="group relative w-full rounded-2xl overflow-hidden border border-white/15 bg-white/[0.02] hover:border-white/50 transition-all duration-500 cursor-pointer mb-16 shadow-2xl"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
 
-            {/* Left 7 Cols: Interactive Video Card */}
+            {/* Left 7 Cols: Full Video Preview Container */}
             <div className="lg:col-span-7 relative aspect-video bg-black overflow-hidden">
               <video
+                ref={videoRef}
                 src="/work/video/celestialpixel.mp4"
-                autoPlay
                 loop
                 muted
                 playsInline
-                ref={(el) => {
-                  if (el) {
-                    el.muted = true;
-                    el.play().catch(() => {});
-                  }
-                }}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className={`w-full h-full object-cover transition-all duration-500 ${
+                  isHovered ? 'scale-105 filter-none' : 'filter brightness-75'
+                }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-80 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
 
-              {/* Play Badge */}
+              {/* Dynamic Overlay — Fades on hover so ONLY video shows brightly */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 transition-opacity duration-300 pointer-events-none ${
+                  isHovered ? 'opacity-20' : 'opacity-70'
+                }`}
+              />
+
+              {/* Hover Badge: Click for Full Details Page */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110 group-hover:bg-white group-hover:text-black shadow-2xl">
-                  <Play className="w-6 h-6 fill-current ml-0.5" />
-                </div>
+                <motion.div
+                  animate={{ scale: isHovered ? 1.08 : 1, opacity: isHovered ? 1 : 0.85 }}
+                  transition={{ duration: 0.2 }}
+                  className="px-5 py-2.5 rounded-full bg-black/70 backdrop-blur-md border border-white/30 text-white font-mono text-xs uppercase tracking-widest flex items-center gap-2.5 shadow-2xl"
+                >
+                  <Play className="w-4 h-4 fill-current text-amber-400" />
+                  <span>{isHovered ? 'Click to View Full Project Details' : 'Hover to Play Video'}</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-neutral-300" />
+                </motion.div>
               </div>
 
-              <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white font-mono text-[10px] uppercase tracking-widest flex items-center gap-2">
+              <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white font-mono text-[10px] uppercase tracking-widest flex items-center gap-2">
                 <Sparkles className="w-3 h-3 text-amber-400" />
                 Flagship Project
               </div>
@@ -87,7 +110,7 @@ export const WorkSection = ({ onSelectProject }) => {
                   Celestial Pixel
                 </h3>
                 <p className="font-mono text-xs sm:text-sm text-neutral-300 leading-relaxed font-light mb-6">
-                  Luxury Web Architecture & AI Creative Studio for Digital Brands. Built with modular React architectures and smooth shader animations.
+                  Luxury Web Architecture & AI Creative Studio for Digital Brands. Move cursor to play video preview. Click card to open dedicated Celestial Pixel project page.
                 </p>
 
                 <div className="flex flex-wrap gap-2">
@@ -104,7 +127,7 @@ export const WorkSection = ({ onSelectProject }) => {
 
               <div className="flex items-center justify-between border-t border-white/10 pt-6">
                 <span className="font-mono text-xs text-white uppercase tracking-widest flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-200">
-                  <span>Explore Celestial Pixel Page</span>
+                  <span>Open Celestial Pixel Details Page</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </span>
                 <span className="font-mono text-xs text-neutral-500">2024</span>
