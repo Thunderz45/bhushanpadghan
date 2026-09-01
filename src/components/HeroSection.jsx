@@ -1,28 +1,35 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion';
 import { Youtube, Linkedin, Github, Instagram } from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
 
 const SOCIAL_LINKS = [
   {
     name: 'YouTube',
     url: 'https://www.youtube.com/@bhushanpadghan9647',
     icon: Youtube,
+    color: '#FF0000', // YouTube Official Red
+    glow: 'rgba(255, 0, 0, 0.6)',
   },
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/bhushan-padghan-049772284/',
     icon: Linkedin,
+    color: '#0A66C2', // LinkedIn Official Blue
+    glow: 'rgba(10, 102, 194, 0.6)',
   },
   {
     name: 'GitHub',
     url: 'https://github.com/Thunderz45',
     icon: Github,
+    color: '#FFFFFF', // GitHub Pure White
+    glow: 'rgba(255, 255, 255, 0.6)',
   },
   {
     name: 'Instagram',
     url: 'https://www.instagram.com/bhushanpatil_045/',
     icon: Instagram,
+    color: '#E4405F', // Instagram Brand Magenta/Pink
+    glow: 'rgba(228, 64, 95, 0.6)',
   },
 ];
 
@@ -128,24 +135,31 @@ export const HeroSection = () => {
             FOUNDER&nbsp;&nbsp;•&nbsp;&nbsp;AI DEVELOPER&nbsp;&nbsp;•&nbsp;&nbsp;AI SPECIALIST
           </motion.p>
 
-          {/* Social Connect Bar (YouTube, LinkedIn, GitHub, Instagram) */}
+          {/* Original Full Color Social Logos Bar */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.85, ease: 'easeOut' }}
-            className="flex items-center gap-5 sm:gap-6 px-6 py-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15"
+            className="flex items-center gap-5 sm:gap-7 px-6 py-3 rounded-full bg-black/50 backdrop-blur-lg border border-white/15 shadow-xl"
           >
-            {SOCIAL_LINKS.map(({ name, url, icon: Icon }) => (
+            {SOCIAL_LINKS.map(({ name, url, icon: Icon, color, glow }) => (
               <a
                 key={name}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={name}
-                className="text-neutral-400 hover:text-white hover:scale-115 transition-all duration-300 flex items-center justify-center p-1 group relative"
+                className="group relative flex items-center justify-center p-1.5 rounded-full transition-transform duration-300 hover:scale-125"
               >
-                <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-                <span className="absolute -top-8 left-1/2 -translate-x-1/2 font-mono text-[9px] uppercase tracking-widest bg-black/90 text-white px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap border border-white/20">
+                <Icon
+                  className="w-5 h-5 sm:w-6 sm:h-6 transition-all duration-300"
+                  style={{
+                    color: color,
+                    filter: `drop-shadow(0 0 6px ${glow})`,
+                  }}
+                />
+                {/* Tooltip */}
+                <span className="absolute -top-9 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-widest bg-black/90 text-white px-2.5 py-1 rounded opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap border border-white/20 shadow-md">
                   {name}
                 </span>
               </a>
