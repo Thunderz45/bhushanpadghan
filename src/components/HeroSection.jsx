@@ -1,6 +1,12 @@
-import React, { useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { motion, useMotionValue, useSpring, useTransform, useScroll, AnimatePresence } from 'framer-motion';
 import { Youtube, Linkedin, Github, Instagram } from 'lucide-react';
+
+const BACKGROUND_VIDEOS = [
+  '/work/video/12937422-hd_1920_1080_30fps.mp4',
+  '/work/video/15254965_1920_1080_24fps.mp4',
+  '/work/video/14360605_compressed.mp4',
+];
 
 const SOCIAL_LINKS = [
   {
@@ -35,6 +41,12 @@ const SOCIAL_LINKS = [
 
 export const HeroSection = () => {
   const heroRef = useRef(null);
+  const [videoIdx, setVideoIdx] = useState(0);
+
+  /* Advance to next background video when current video ends */
+  const handleVideoEnded = () => {
+    setVideoIdx((prev) => (prev + 1) % BACKGROUND_VIDEOS.length);
+  };
 
   /* Silky smooth cursor tracking physics */
   const mouseX = useMotionValue(0);
@@ -54,8 +66,8 @@ export const HeroSection = () => {
   });
 
   /* Background Video Parallax Depth & Scale */
-  const videoY     = useTransform(scrollYProgress, [0, 1], ['0%', '22%']);
-  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+  const videoY       = useTransform(scrollYProgress, [0, 1], ['0%', '22%']);
+  const videoScale   = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const videoOpacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 0.6, 0]);
 
   /* Typography Parallax Float & Fade */
@@ -71,34 +83,42 @@ export const HeroSection = () => {
     <section
       ref={heroRef}
       id="intro"
-      className="relative w-full overflow-hidden flex items-center justify-center"
-      style={{ height: '100vh', minHeight: 620, background: '#050505' }}
+      className="relative w-full overflow-hidden flex items-center justify-center bg-[#050505]"
+      style={{ height: '100vh', minHeight: 620 }}
       onMouseMove={onMouseMove}
     >
-      {/* ── SINGLE FULL-BLEED BACKGROUND VIDEO WITH SMOOTH PARALLAX ── */}
+      {/* ── 3-VIDEO SEQUENTIAL BACKGROUND LOOP ── */}
       <motion.div
         className="absolute inset-0 w-full h-full pointer-events-none"
         style={{ y: videoY, scale: videoScale, opacity: videoOpacity }}
       >
-        <video
-          src="/work/video/12937422-hd_1920_1080_30fps.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          ref={(el) => {
-            if (el) {
-              el.muted = true;
-              el.play().catch(() => {});
-            }
-          }}
-          className="w-full h-full object-cover"
-          style={{ filter: 'brightness(0.85) contrast(1.05)' }}
-        />
-        {/* 50% Black Overlay for clean high contrast */}
-        <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+        <AnimatePresence mode="wait">
+          <motion.video
+            key={BACKGROUND_VIDEOS[videoIdx]}
+            src={BACKGROUND_VIDEOS[videoIdx]}
+            autoPlay
+            muted
+            playsInline
+            onEnded={handleVideoEnded}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
+            ref={(el) => {
+              if (el) {
+                el.muted = true;
+                el.play().catch(() => {});
+              }
+            }}
+            className="w-full h-full object-cover"
+            style={{ filter: 'brightness(0.85) contrast(1.05)' }}
+          />
+        </AnimatePresence>
+
+        {/* 50% Black Overlay */}
+        <div className="absolute inset-0 bg-black/50 pointer-events-none z-10" />
         {/* Subtle Vignette Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none z-10" />
       </motion.div>
 
       {/* ══ CENTREPIECE TYPOGRAPHY & SOCIAL CONNECT ══ */}
@@ -111,7 +131,7 @@ export const HeroSection = () => {
             opacity: textOpacity,
           }}
         >
-          {/* Display Name with Staggered Entrance */}
+          {/* Display Name */}
           <h1
             className="font-serif italic text-white leading-none whitespace-nowrap mb-6 drop-shadow-2xl"
             style={{ fontSize: 'clamp(3.2rem, 8.5vw, 8rem)', fontWeight: 400, letterSpacing: '-0.01em' }}
