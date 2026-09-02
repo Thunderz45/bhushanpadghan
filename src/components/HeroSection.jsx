@@ -3,7 +3,6 @@ import { motion, useMotionValue, useSpring, useTransform, useScroll, AnimatePres
 import { Youtube, Linkedin, Github, Instagram } from 'lucide-react';
 
 const BACKGROUND_VIDEOS = [
-  '/work/video/12937422-hd_1920_1080_30fps.mp4',
   '/work/video/15254965_1920_1080_24fps.mp4',
   '/work/video/14360605_compressed.mp4',
 ];
