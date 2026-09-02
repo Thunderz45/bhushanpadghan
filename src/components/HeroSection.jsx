@@ -95,6 +95,8 @@ export const HeroSection = () => {
           <motion.video
             key={BACKGROUND_VIDEOS[videoIdx]}
             src={BACKGROUND_VIDEOS[videoIdx]}
+            poster="/work/dist/images/bhushan_portrait.png"
+            title="Bhushan Padghan — AI Developer Showcase Video"
             autoPlay
             muted
             playsInline
