@@ -1,0 +1,11 @@
+# Robots.txt for https://bhushanpadghan.online
+# Allow all search engine crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://www.bhushanpadghan.online/sitemap.xml
+
+# Crawl Delay (optional, default fast)
+Crawl-delay: 1
