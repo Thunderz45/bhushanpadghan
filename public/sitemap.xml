@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
@@ -15,6 +16,39 @@
       <image:title>Bhushan Padghan — AI Developer &amp; Systems Architect</image:title>
       <image:caption>Portrait of Bhushan Padghan</image:caption>
     </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.bhushanpadghan.online/work/dist/images/projects/celestialpixel.png</video:thumbnail_loc>
+      <video:title>Celestial Pixel — Luxury Creative Web Architecture</video:title>
+      <video:description>Luxury web architecture demonstration featuring interactive dynamic components, high-speed Vite performance, and smooth scroll animations.</video:description>
+      <video:content_loc>https://www.bhushanpadghan.online/work/video/celestialpixel.mp4</video:content_loc>
+      <video:player_loc>https://www.bhushanpadghan.online/#work-page</video:player_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2024-04-01T08:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.bhushanpadghan.online/work/dist/images/bhushan_portrait.png</video:thumbnail_loc>
+      <video:title>Bhushan Padghan — Modern AI &amp; Systems Architecture Showcase</video:title>
+      <video:description>High-performance interactive demonstration of autonomous AI workflows, vector RAG pipelines, and full-stack software development.</video:description>
+      <video:content_loc>https://www.bhushanpadghan.online/work/video/15254965_1920_1080_24fps.mp4</video:content_loc>
+      <video:player_loc>https://www.bhushanpadghan.online/#intro</video:player_loc>
+      <video:duration>15</video:duration>
+      <video:publication_date>2024-04-01T08:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.bhushanpadghan.online/work/dist/images/bhushan_portrait.png</video:thumbnail_loc>
+      <video:title>Bhushan Padghan — Autonomous AI Systems Loop</video:title>
+      <video:description>Visual showcase of enterprise workflow automation, multi-cloud API webhooks, and intelligent agent engineering.</video:description>
+      <video:content_loc>https://www.bhushanpadghan.online/work/video/14360605_compressed.mp4</video:content_loc>
+      <video:player_loc>https://www.bhushanpadghan.online/#intro</video:player_loc>
+      <video:duration>20</video:duration>
+      <video:publication_date>2024-04-01T08:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
   </url>
   <url>
     <loc>https://www.bhushanpadghan.online/#about</loc>
