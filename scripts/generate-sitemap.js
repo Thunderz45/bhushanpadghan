@@ -12,12 +12,13 @@ const TODAY = new Date().toISOString().split('T')[0];
 function generateSitemap() {
   const sections = [
     { path: '', priority: '1.0', changefreq: 'weekly', title: 'Home & Portfolio' },
+    { path: '#intro', priority: '1.0', changefreq: 'weekly', title: 'Intro — Bhushan Padghan' },
+    { path: '#work', priority: '0.95', changefreq: 'weekly', title: 'What I Do — AI Workflows & Systems' },
+    { path: '#gallery', priority: '0.9', changefreq: 'weekly', title: 'Gallery — Exhibition & Summit Showcase' },
     { path: '#about', priority: '0.8', changefreq: 'monthly', title: 'About Bhushan Padghan' },
     { path: '#experience', priority: '0.8', changefreq: 'monthly', title: 'Experience & T-HUB Incubation' },
-    { path: '#projects', priority: '0.9', changefreq: 'weekly', title: 'Featured Projects & AI Systems' },
-    { path: '#skills', priority: '0.8', changefreq: 'monthly', title: 'Technical Skills & Architecture' },
-    { path: '#gallery', priority: '0.7', changefreq: 'monthly', title: 'Exhibition & Summit Gallery' },
-    { path: '#contact', priority: '0.7', changefreq: 'monthly', title: 'Contact & Inquiries' }
+    { path: '#projects', priority: '0.85', changefreq: 'weekly', title: 'Featured Projects & AI Systems' },
+    { path: '#contact', priority: '0.75', changefreq: 'monthly', title: 'Contact & Inquiries' }
   ];
 
   const videos = [
