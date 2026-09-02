@@ -40,7 +40,7 @@ function generateSitemap() {
     if (sec.path === '') {
       xml += `    <image:image>\n`;
       xml += `      <image:loc>${DOMAIN}/work/dist/images/bhushan_portrait.png</image:loc>\n`;
-      xml += `      <image:title>Bhushan Padghan — AI Developer & Systems Architect</image:title>\n`;
+      xml += `      <image:title>${escapeXml('Bhushan Padghan — AI Developer & Systems Architect')}</image:title>\n`;
       xml += `      <image:caption>Portrait of Bhushan Padghan</image:caption>\n`;
       xml += `    </image:image>\n`;
     }
