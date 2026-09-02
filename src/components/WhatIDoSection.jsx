@@ -203,7 +203,7 @@ export const WhatIDoSection = () => {
       className="relative w-full bg-[#050505] border-b border-white/10 overflow-hidden"
       style={{ minHeight: '100vh' }}
     >
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 py-24 lg:py-32">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-14 py-16 sm:py-24 lg:py-32">
 
         {/* Section Label */}
         <motion.p
@@ -211,7 +211,7 @@ export const WhatIDoSection = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={labelInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="font-mono text-white/40 text-[11px] tracking-[0.35em] uppercase mb-16 lg:mb-20"
+          className="font-mono text-white/40 text-[11px] tracking-[0.35em] uppercase mb-8 sm:mb-16 lg:mb-20"
         >
           WHAT I DO
         </motion.p>

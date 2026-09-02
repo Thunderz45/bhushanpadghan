@@ -26,8 +26,8 @@ export const GallerySection = () => {
   const [selectedImg, setSelectedImg] = useState(null);
 
   return (
-    <section id="gallery" className="relative w-full bg-[#050505] border-b border-white/10 py-24 lg:py-32">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14">
+    <section id="gallery" className="relative w-full bg-[#050505] border-b border-white/10 py-16 sm:py-24 lg:py-32">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-14">
 
         {/* Section Label Header */}
         <div className="mb-14 sm:mb-18">

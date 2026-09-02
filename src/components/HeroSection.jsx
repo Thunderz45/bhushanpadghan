@@ -132,8 +132,8 @@ export const HeroSection = () => {
         >
           {/* Display Name */}
           <h1
-            className="font-serif italic text-white leading-none whitespace-nowrap mb-6 drop-shadow-2xl"
-            style={{ fontSize: 'clamp(3.2rem, 8.5vw, 8rem)', fontWeight: 400, letterSpacing: '-0.01em' }}
+            className="font-serif italic text-white leading-tight sm:leading-none tracking-tight mb-4 sm:mb-6 drop-shadow-2xl font-normal"
+            style={{ fontSize: 'clamp(2.4rem, 8.5vw, 8rem)', letterSpacing: '-0.01em' }}
             aria-label="Bhushan Padghan"
           >
             {nameChars.map((char, i) => (
@@ -151,13 +151,16 @@ export const HeroSection = () => {
 
           {/* Role Subtitle */}
           <motion.p
-            className="font-mono text-neutral-200 tracking-[0.32em] uppercase mb-7 drop-shadow-md"
-            style={{ fontSize: 'clamp(0.65rem, 1.15vw, 0.85rem)' }}
+            className="font-mono text-neutral-200 tracking-[0.16em] sm:tracking-[0.32em] uppercase mb-6 sm:mb-7 drop-shadow-md text-[10px] sm:text-xs text-center flex flex-wrap justify-center items-center gap-1 sm:gap-2"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.65, ease: 'easeOut' }}
           >
-            FOUNDER&nbsp;&nbsp;•&nbsp;&nbsp;AI DEVELOPER&nbsp;&nbsp;•&nbsp;&nbsp;AI SPECIALIST
+            <span>FOUNDER</span>
+            <span className="text-white/40">•</span>
+            <span>AI DEVELOPER</span>
+            <span className="text-white/40">•</span>
+            <span>AI SPECIALIST</span>
           </motion.p>
 
           {/* Original Full Color Social Logos Bar */}
@@ -165,7 +168,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.85, ease: 'easeOut' }}
-            className="flex items-center gap-5 sm:gap-7 px-6 py-3 rounded-full bg-black/60 backdrop-blur-xl border border-white/20 shadow-2xl"
+            className="flex items-center justify-center gap-4 sm:gap-7 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-black/60 backdrop-blur-xl border border-white/20 shadow-2xl"
           >
             {SOCIAL_LINKS.map(({ name, url, icon: Icon, color, glow }) => (
               <a

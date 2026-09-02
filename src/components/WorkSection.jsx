@@ -41,9 +41,9 @@ export const WorkSection = ({ onSelectProject }) => {
   return (
     <section
       id="work-page"
-      className="relative w-full bg-[#050505] border-b border-white/10 py-24 lg:py-32"
+      className="relative w-full bg-[#050505] border-b border-white/10 py-16 sm:py-24 lg:py-32"
     >
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-14">
 
         {/* Section Header — Clean "Featured Work" title without instruction text */}
         <div className="mb-12 sm:mb-16">
