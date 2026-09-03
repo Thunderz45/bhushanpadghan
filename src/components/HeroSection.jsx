@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform, useScroll, AnimatePres
 import { Youtube, Linkedin, Github, Instagram } from 'lucide-react';
 
 const BACKGROUND_IMAGES = [
+  '/work/projects/celestialpixel.png',
   '/work/projects/leadflow.png',
   '/work/projects/pixel_studio_x.png',
   '/work/IMC/1763044191469.jpeg',
