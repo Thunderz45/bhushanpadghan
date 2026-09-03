@@ -4,6 +4,7 @@ import { Loader } from './components/Loader';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { WhatIDoSection } from './components/WhatIDoSection';
+import { YouTubeSection } from './components/YouTubeSection';
 import { GallerySection } from './components/GallerySection';
 import { Footer } from './components/Footer';
 
@@ -44,6 +45,7 @@ export const App = () => {
       <main>
         <HeroSection />
         <WhatIDoSection />
+        <YouTubeSection />
         <GallerySection />
       </main>
       <Footer />

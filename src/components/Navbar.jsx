@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const NAV_ITEMS = [
   { label: 'INTRO',     href: '#intro'   },
   { label: 'WHAT I DO', href: '#work'    },
+  { label: 'YOUTUBE',   href: '#youtube' },
   { label: 'GALLERY',   href: '#gallery' },
 ];
 
