@@ -1,10 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, useScroll, AnimatePresence } from 'framer-motion';
 import { Youtube, Linkedin, Github, Instagram } from 'lucide-react';
 
-const BACKGROUND_VIDEOS = [
-  '/work/video/15254965_1920_1080_24fps.mp4',
-  '/work/video/14360605_compressed.mp4',
+const BACKGROUND_IMAGES = [
+  '/work/projects/leadflow.png',
+  '/work/projects/pixel_studio_x.png',
+  '/work/IMC/1763044191469.jpeg',
+  '/work/ESG%20Global/1742578291400.jpeg',
 ];
 
 const SOCIAL_LINKS = [
@@ -40,12 +42,15 @@ const SOCIAL_LINKS = [
 
 export const HeroSection = () => {
   const heroRef = useRef(null);
-  const [videoIdx, setVideoIdx] = useState(0);
+  const [imgIdx, setImgIdx] = useState(0);
 
-  /* Advance to next background video when current video ends */
-  const handleVideoEnded = () => {
-    setVideoIdx((prev) => (prev + 1) % BACKGROUND_VIDEOS.length);
-  };
+  /* Automatically advance background image every 5 seconds (5000ms) */
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setImgIdx((prev) => (prev + 1) % BACKGROUND_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   /* Silky smooth cursor tracking physics */
   const mouseX = useMotionValue(0);
@@ -64,7 +69,7 @@ export const HeroSection = () => {
     offset: ['start start', 'end start'],
   });
 
-  /* Background Video Parallax Depth & Scale */
+  /* Background Image Parallax Depth & Scale */
   const videoY       = useTransform(scrollYProgress, [0, 1], ['0%', '22%']);
   const videoScale   = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const videoOpacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 0.6, 0]);
@@ -86,40 +91,32 @@ export const HeroSection = () => {
       style={{ height: '100vh', minHeight: 620 }}
       onMouseMove={onMouseMove}
     >
-      {/* ── 3-VIDEO SEQUENTIAL BACKGROUND LOOP ── */}
+      {/* ── 5-SECOND AUTOMATIC BACKGROUND IMAGE SLIDESHOW ── */}
       <motion.div
         className="absolute inset-0 w-full h-full pointer-events-none"
         style={{ y: videoY, scale: videoScale, opacity: videoOpacity }}
       >
         <AnimatePresence mode="wait">
-          <motion.video
-            key={BACKGROUND_VIDEOS[videoIdx]}
-            src={BACKGROUND_VIDEOS[videoIdx]}
-            poster="/work/bhushan_portrait.png"
-            title="Bhushan Padghan — AI Developer Showcase Video"
-            autoPlay
-            muted
-            playsInline
-            onEnded={handleVideoEnded}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+          <motion.img
+            key={BACKGROUND_IMAGES[imgIdx]}
+            src={BACKGROUND_IMAGES[imgIdx]}
+            alt="Bhushan Padghan Background Showcase"
+            initial={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.04 }}
             transition={{ duration: 1.2, ease: 'easeInOut' }}
-            ref={(el) => {
-              if (el) {
-                el.muted = true;
-                el.play().catch(() => {});
-              }
-            }}
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.85) contrast(1.05)' }}
+            style={{ filter: 'contrast(1.05)' }}
           />
         </AnimatePresence>
 
-        {/* 50% Black Overlay */}
-        <div className="absolute inset-0 bg-black/50 pointer-events-none z-10" />
-        {/* Subtle Vignette Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none z-10" />
+        {/* 18% Black Color Overlay on the photo */}
+        <div 
+          className="absolute inset-0 pointer-events-none z-10" 
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.18)' }} 
+        />
+        {/* Subtle Vignette Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none z-10" />
       </motion.div>
 
       {/* ══ CENTREPIECE TYPOGRAPHY & SOCIAL CONNECT ══ */}
@@ -223,6 +220,29 @@ export const HeroSection = () => {
           <path d="M1 1L7 7L13 1" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
         </motion.svg>
       </motion.a>
+
+      {/* ── 5-SECOND SLIDESHOW INDICATOR DOTS & TIMING CONTROL ── */}
+      <div className="absolute bottom-6 right-6 sm:bottom-8 sm:right-10 z-30 flex items-center gap-3 bg-black/60 backdrop-blur-xl px-3.5 py-2 rounded-full border border-white/15 shadow-2xl">
+        <span className="font-mono text-[10px] text-white/60 tracking-wider">
+          0{imgIdx + 1}/0{BACKGROUND_IMAGES.length}
+        </span>
+        <div className="flex items-center gap-1.5">
+          {BACKGROUND_IMAGES.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setImgIdx(idx)}
+              className="relative p-1 focus:outline-none group cursor-pointer"
+              aria-label={`Switch to image ${idx + 1}`}
+            >
+              <div
+                className={`h-1.5 rounded-full transition-all duration-500 ${
+                  idx === imgIdx ? 'w-6 bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'w-1.5 bg-white/30 group-hover:bg-white/70'
+                }`}
+              />
+            </button>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
