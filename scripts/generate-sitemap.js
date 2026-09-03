@@ -16,7 +16,6 @@ function generateSitemap() {
       description: 'Luxury web architecture demonstration featuring interactive dynamic components, high-speed Vite performance, and smooth scroll animations.',
       thumbnailUrl: `${DOMAIN}/work/projects/celestialpixel.png`,
       contentUrl: `${DOMAIN}/work/video/celestialpixel.mp4`,
-      playerUrl: `${DOMAIN}/`,
       duration: 30,
       publicationDate: '2024-04-01T08:00:00+05:30'
     },
@@ -25,7 +24,6 @@ function generateSitemap() {
       description: 'High-performance interactive demonstration of autonomous AI workflows, vector RAG pipelines, and full-stack software development.',
       thumbnailUrl: `${DOMAIN}/work/bhushan_portrait.png`,
       contentUrl: `${DOMAIN}/work/video/15254965_1920_1080_24fps.mp4`,
-      playerUrl: `${DOMAIN}/`,
       duration: 15,
       publicationDate: '2024-04-01T08:00:00+05:30'
     },
@@ -34,7 +32,6 @@ function generateSitemap() {
       description: 'Visual showcase of enterprise workflow automation, multi-cloud API webhooks, and intelligent agent engineering.',
       thumbnailUrl: `${DOMAIN}/work/bhushan_portrait.png`,
       contentUrl: `${DOMAIN}/work/video/14360605_compressed.mp4`,
-      playerUrl: `${DOMAIN}/`,
       duration: 20,
       publicationDate: '2024-04-01T08:00:00+05:30'
     }
@@ -95,7 +92,6 @@ function generateSitemap() {
     xml += `      <video:title>${escapeXml(video.title)}</video:title>\n`;
     xml += `      <video:description>${escapeXml(video.description)}</video:description>\n`;
     xml += `      <video:content_loc>${video.contentUrl}</video:content_loc>\n`;
-    xml += `      <video:player_loc>${video.playerUrl}</video:player_loc>\n`;
     xml += `      <video:duration>${video.duration}</video:duration>\n`;
     xml += `      <video:publication_date>${video.publicationDate}</video:publication_date>\n`;
     xml += `      <video:family_friendly>yes</video:family_friendly>\n`;
