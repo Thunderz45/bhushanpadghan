@@ -3,9 +3,10 @@ import { motion, useMotionValue, useSpring, useTransform, useScroll, AnimatePres
 import { Youtube, Linkedin, Github, Instagram } from 'lucide-react';
 
 const BACKGROUND_IMAGES = [
-  '/work/projects/celestialpixel.png',
   '/work/projects/leadflow.png',
   '/work/projects/pixel_studio_x.png',
+  '/work/projects/celestialpixel.png',
+  '/favicon.jpeg',
   '/work/IMC/1763044191469.jpeg',
   '/work/ESG%20Global/1742578291400.jpeg',
 ];
@@ -106,7 +107,7 @@ export const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.04 }}
             transition={{ duration: 1.2, ease: 'easeInOut' }}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
             style={{ filter: 'contrast(1.05)' }}
           />
         </AnimatePresence>
@@ -225,7 +226,7 @@ export const HeroSection = () => {
       {/* ── 5-SECOND SLIDESHOW INDICATOR DOTS & TIMING CONTROL ── */}
       <div className="absolute bottom-6 right-6 sm:bottom-8 sm:right-10 z-30 flex items-center gap-3 bg-black/60 backdrop-blur-xl px-3.5 py-2 rounded-full border border-white/15 shadow-2xl">
         <span className="font-mono text-[10px] text-white/60 tracking-wider">
-          0{imgIdx + 1}/0{BACKGROUND_IMAGES.length}
+          {String(imgIdx + 1).padStart(2, '0')}/{String(BACKGROUND_IMAGES.length).padStart(2, '0')}
         </span>
         <div className="flex items-center gap-1.5">
           {BACKGROUND_IMAGES.map((_, idx) => (
