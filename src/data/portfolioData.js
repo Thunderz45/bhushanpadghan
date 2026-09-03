@@ -12,7 +12,7 @@ export const portfolioData = {
     tagline: "Building autonomous AI agents, web architectures, and business automation engines.",
     bio: "AI software developer and startup founder. Incubated at T-HUB Hyderabad with technology exhibitions at ESG Global Summit and India Mobile Congress. Dedicated to engineering autonomous LLM workflows and scalable web products.",
     pullQuote: "Always curious about new ideas and building what's next.",
-    portrait: "/work/dist/images/bhushan_portrait.png",
+    portrait: "/work/bhushan_portrait.png",
     heroVideo: "/work/video/14188177_2160_3840_25fps.mp4",
     location: {
       city: "Pune / Hyderabad, India",
@@ -120,7 +120,7 @@ export const portfolioData = {
       category: "AI SaaS",
       stance: "Designing Automated B2B Lead Outreach Intelligence",
       description: "B2B sales automation platform. Scrapes prospect signals, scores leads with GPT-4, and triggers personalized outreach sequences.",
-      image: "/work/dist/images/projects/leadflow.png",
+      image: "/work/projects/leadflow.png",
       tags: ["React", "OpenAI API", "Puppeteer", "Node.js"],
       status: "2024 · Active",
       features: [
@@ -135,7 +135,7 @@ export const portfolioData = {
       category: "Full-Stack SaaS",
       stance: "AI-Powered Creative Workspace for Digital Teams",
       description: "SaaS workspace for digital agencies with AI copywriting, visual asset generators, and dynamic canvas editor.",
-      image: "/work/dist/images/projects/pixel_studio_x.png",
+      image: "/work/projects/pixel_studio_x.png",
       tags: ["React", "TypeScript", "Express", "OpenAI"],
       status: "2024 · Active",
       features: [
@@ -150,7 +150,7 @@ export const portfolioData = {
       category: "AI Agent",
       stance: "Low-Latency Audio Transcriber & Action Dispatcher",
       description: "Voice agent transcribing calls with Whisper, identifying speakers, and generating action items for Slack & Notion.",
-      image: "/work/dist/images/projects/ai_meeting_assistant.png",
+      image: "/work/projects/ai_meeting_assistant.png",
       tags: ["Python", "OpenAI Whisper", "GPT-4", "WebSockets"],
       status: "2024 · Deployed",
       features: [
@@ -169,7 +169,7 @@ export const portfolioData = {
       tagline: "Automated B2B Lead Outreach Engine",
       stance: "Designing Automated B2B Lead Outreach Intelligence",
       description: "B2B sales automation platform. Scrapes prospect signals, scores leads with GPT-4, and triggers personalized outreach sequences.",
-      image: "/work/dist/images/projects/leadflow.png",
+      image: "/work/projects/leadflow.png",
       tags: ["React", "OpenAI API", "Puppeteer", "Node.js"],
       features: [
         "Automated multi-source lead enrichment",
@@ -184,7 +184,7 @@ export const portfolioData = {
       tagline: "AI Creative Studio Platform",
       stance: "AI-Powered Creative Workspace for Digital Teams",
       description: "SaaS workspace for digital agencies with AI copywriting, visual asset generators, and dynamic canvas editor.",
-      image: "/work/dist/images/projects/pixel_studio_x.png",
+      image: "/work/projects/pixel_studio_x.png",
       tags: ["React", "TypeScript", "Express", "OpenAI"],
       features: [
         "Interactive canvas asset manager",
@@ -199,7 +199,7 @@ export const portfolioData = {
       tagline: "Audio Summarization & Action Item Agent",
       stance: "Low-Latency Audio Transcriber & Action Dispatcher",
       description: "Voice agent transcribing calls with Whisper, identifying speakers, and generating action items for Slack & Notion.",
-      image: "/work/dist/images/projects/ai_meeting_assistant.png",
+      image: "/work/projects/ai_meeting_assistant.png",
       tags: ["Python", "OpenAI Whisper", "GPT-4", "WebSockets"],
       features: [
         "Low-latency real-time voice transcription",
@@ -214,7 +214,7 @@ export const portfolioData = {
       tagline: "High-Performance Agency Digital Showcase",
       stance: "Architecting High-Speed Luxury Agency Web Portals",
       description: "Luxury web platform built for creative technology agencies with dynamic project showcases and fast load times.",
-      image: "/work/dist/images/projects/celestialpixel.png",
+      image: "/work/projects/celestialpixel.png",
       tags: ["React", "Vite", "Framer Motion", "TailwindCSS"],
       features: [
         "Smooth scroll navigation & interactive elements",
@@ -228,7 +228,7 @@ export const portfolioData = {
       tagline: "Multi-API Integration & Webhook Suite",
       stance: "Automating Multi-Cloud API Ingestion & Document OCR",
       description: "Backend integration pipelines for automated data syncing, invoice OCR parsing, and multi-cloud webhooks.",
-      image: "/work/dist/images/projects/business_automation.png",
+      image: "/work/projects/business_automation.png",
       tags: ["Python", "Node.js", "REST APIs", "Docker"],
       features: [
         "Zero-delay webhook processing pipeline",
@@ -242,7 +242,7 @@ export const portfolioData = {
       tagline: "Monolith Liquid Portfolio",
       stance: "Creating a Scroll-Driven Monolith Portfolio Architecture",
       description: "Personal portfolio showcasing experience, T-HUB incubation journey, project gallery, and LinkedIn integration.",
-      image: "/work/dist/images/projects/portfolio_website.png",
+      image: "/work/projects/portfolio_website.png",
       tags: ["React", "Vite", "TailwindCSS", "Framer Motion"],
       features: [
         "Filterable media lightbox gallery",

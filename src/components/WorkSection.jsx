@@ -71,7 +71,7 @@ export const WorkSection = ({ onSelectProject }) => {
               <video
                 ref={videoRef}
                 src="/work/video/celestialpixel.mp4"
-                poster="/work/dist/images/projects/celestialpixel.png"
+                poster="/work/projects/celestialpixel.png"
                 title="Celestial Pixel — Luxury Creative Web Architecture Video"
                 loop
                 muted

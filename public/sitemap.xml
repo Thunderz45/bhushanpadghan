@@ -8,264 +8,126 @@
 
   <url>
     <loc>https://www.bhushanpadghan.online/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/dist/images/bhushan_portrait.png</image:loc>
+      <image:loc>https://www.bhushanpadghan.online/work/bhushan_portrait.png</image:loc>
       <image:title>Bhushan Padghan — AI Developer &amp; Systems Architect</image:title>
       <image:caption>Portrait of Bhushan Padghan</image:caption>
     </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/projects/leadflow.png</image:loc>
+      <image:title>LeadFlow AI — AI SaaS</image:title>
+      <image:caption>B2B sales automation platform. Scrapes prospect signals, scores leads with GPT-4, and triggers personalized outreach sequences.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/projects/pixel_studio_x.png</image:loc>
+      <image:title>Pixel Studio X — Full-Stack SaaS</image:title>
+      <image:caption>SaaS workspace for digital agencies with AI copywriting, visual asset generators, and dynamic canvas editor.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/projects/ai_meeting_assistant.png</image:loc>
+      <image:title>AI Meeting Assistant — AI Agent</image:title>
+      <image:caption>Voice agent transcribing calls with Whisper, identifying speakers, and generating action items for Slack &amp; Notion.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/projects/celestialpixel.png</image:loc>
+      <image:title>CelestialPixel Platform — Web Architecture</image:title>
+      <image:caption>Luxury web platform built for creative technology agencies with dynamic project showcases and fast load times.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/projects/business_automation.png</image:loc>
+      <image:title>Enterprise Automation Pipelines — Workflow Automation</image:title>
+      <image:caption>Backend integration pipelines for automated data syncing, invoice OCR parsing, and multi-cloud webhooks.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/projects/portfolio_website.png</image:loc>
+      <image:title>Bhushan Padghan Portfolio — Personal Brand</image:title>
+      <image:caption>Personal portfolio showcasing experience, T-HUB incubation journey, project gallery, and LinkedIn integration.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/T-HUB/1742577877638.jpeg</image:loc>
+      <image:title>T-HUB Incubation Pitch</image:title>
+      <image:caption>Presenting AI product architecture at T-HUB Hyderabad.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/T-HUB/1742577880611.jpeg</image:loc>
+      <image:title>Founder Network</image:title>
+      <image:caption>Networking session with startup founders at T-HUB.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/T-HUB/1742577913135.jpeg</image:loc>
+      <image:title>AI Product Demo</image:title>
+      <image:caption>Demonstrating automated SaaS workflows to advisors.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/T-HUB/1763039276976.jpeg</image:loc>
+      <image:title>Tech Floor Presentation</image:title>
+      <image:caption>Exhibiting software prototypes at T-HUB.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/ESG Global/1742578266322.jpeg</image:loc>
+      <image:title>ESG Global Delegation</image:title>
+      <image:caption>Presenting tech metrics at ESG Summit.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/ESG Global/1742578282732.jpeg</image:loc>
+      <image:title>ESG Analytics Demo</image:title>
+      <image:caption>Demonstrating ESG software to delegates.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/IMC/1763044187915.jpeg</image:loc>
+      <image:title>India Mobile Congress Demo</image:title>
+      <image:caption>Exhibiting AI software at IMC Congress.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/IMC/1763044191469.jpeg</image:loc>
+      <image:title>IMC Innovation Showcase</image:title>
+      <image:caption>Demonstrating intelligent automation tools.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/College/1762955646604.jpeg</image:loc>
+      <image:title>Hackathon Leadership</image:title>
+      <image:caption>Leading technical developer teams.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhushanpadghan.online/work/College/1742578291400.jpeg</image:loc>
+      <image:title>Innovation Award</image:title>
+      <image:caption>Receiving technology recognition award.</image:caption>
+    </image:image>
     <video:video>
-      <video:thumbnail_loc>https://www.bhushanpadghan.online/work/dist/images/projects/celestialpixel.png</video:thumbnail_loc>
+      <video:thumbnail_loc>https://www.bhushanpadghan.online/work/projects/celestialpixel.png</video:thumbnail_loc>
       <video:title>Celestial Pixel — Luxury Creative Web Architecture</video:title>
       <video:description>Luxury web architecture demonstration featuring interactive dynamic components, high-speed Vite performance, and smooth scroll animations.</video:description>
       <video:content_loc>https://www.bhushanpadghan.online/work/video/celestialpixel.mp4</video:content_loc>
-      <video:player_loc>https://www.bhushanpadghan.online/#work-page</video:player_loc>
+      <video:player_loc>https://www.bhushanpadghan.online/</video:player_loc>
       <video:duration>30</video:duration>
       <video:publication_date>2024-04-01T08:00:00+05:30</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
     </video:video>
     <video:video>
-      <video:thumbnail_loc>https://www.bhushanpadghan.online/work/dist/images/bhushan_portrait.png</video:thumbnail_loc>
+      <video:thumbnail_loc>https://www.bhushanpadghan.online/work/bhushan_portrait.png</video:thumbnail_loc>
       <video:title>Bhushan Padghan — Modern AI &amp; Systems Architecture Showcase</video:title>
       <video:description>High-performance interactive demonstration of autonomous AI workflows, vector RAG pipelines, and full-stack software development.</video:description>
       <video:content_loc>https://www.bhushanpadghan.online/work/video/15254965_1920_1080_24fps.mp4</video:content_loc>
-      <video:player_loc>https://www.bhushanpadghan.online/#intro</video:player_loc>
+      <video:player_loc>https://www.bhushanpadghan.online/</video:player_loc>
       <video:duration>15</video:duration>
       <video:publication_date>2024-04-01T08:00:00+05:30</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
     </video:video>
     <video:video>
-      <video:thumbnail_loc>https://www.bhushanpadghan.online/work/dist/images/bhushan_portrait.png</video:thumbnail_loc>
+      <video:thumbnail_loc>https://www.bhushanpadghan.online/work/bhushan_portrait.png</video:thumbnail_loc>
       <video:title>Bhushan Padghan — Autonomous AI Systems Loop</video:title>
       <video:description>Visual showcase of enterprise workflow automation, multi-cloud API webhooks, and intelligent agent engineering.</video:description>
       <video:content_loc>https://www.bhushanpadghan.online/work/video/14360605_compressed.mp4</video:content_loc>
-      <video:player_loc>https://www.bhushanpadghan.online/#intro</video:player_loc>
+      <video:player_loc>https://www.bhushanpadghan.online/</video:player_loc>
       <video:duration>20</video:duration>
       <video:publication_date>2024-04-01T08:00:00+05:30</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
     </video:video>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#intro</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#work</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#gallery</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#about</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#experience</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#projects</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#contact</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#project-leadflow</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/dist/images/projects/leadflow.png</image:loc>
-      <image:title>LeadFlow AI — AI SaaS</image:title>
-      <image:caption>B2B sales automation platform. Scrapes prospect signals, scores leads with GPT-4, and triggers personalized outreach sequences.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#project-pixel-studio-x</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/dist/images/projects/pixel_studio_x.png</image:loc>
-      <image:title>Pixel Studio X — Full-Stack SaaS</image:title>
-      <image:caption>SaaS workspace for digital agencies with AI copywriting, visual asset generators, and dynamic canvas editor.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#project-ai-meeting-assistant</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/dist/images/projects/ai_meeting_assistant.png</image:loc>
-      <image:title>AI Meeting Assistant — AI Agent</image:title>
-      <image:caption>Voice agent transcribing calls with Whisper, identifying speakers, and generating action items for Slack &amp; Notion.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#project-celestialpixel</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/dist/images/projects/celestialpixel.png</image:loc>
-      <image:title>CelestialPixel Platform — Web Architecture</image:title>
-      <image:caption>Luxury web platform built for creative technology agencies with dynamic project showcases and fast load times.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#project-business-automation</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/dist/images/projects/business_automation.png</image:loc>
-      <image:title>Enterprise Automation Pipelines — Workflow Automation</image:title>
-      <image:caption>Backend integration pipelines for automated data syncing, invoice OCR parsing, and multi-cloud webhooks.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#project-portfolio-website</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/dist/images/projects/portfolio_website.png</image:loc>
-      <image:title>Bhushan Padghan Portfolio — Personal Brand</image:title>
-      <image:caption>Personal portfolio showcasing experience, T-HUB incubation journey, project gallery, and LinkedIn integration.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#gallery-thub-1</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/T-HUB/1742577877638.jpeg</image:loc>
-      <image:title>T-HUB Incubation Pitch</image:title>
-      <image:caption>Presenting AI product architecture at T-HUB Hyderabad.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#gallery-thub-2</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/T-HUB/1742577880611.jpeg</image:loc>
-      <image:title>Founder Network</image:title>
-      <image:caption>Networking session with startup founders at T-HUB.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#gallery-thub-3</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/T-HUB/1742577913135.jpeg</image:loc>
-      <image:title>AI Product Demo</image:title>
-      <image:caption>Demonstrating automated SaaS workflows to advisors.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#gallery-thub-4</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/T-HUB/1763039276976.jpeg</image:loc>
-      <image:title>Tech Floor Presentation</image:title>
-      <image:caption>Exhibiting software prototypes at T-HUB.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#gallery-esg-1</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/ESG Global/1742578266322.jpeg</image:loc>
-      <image:title>ESG Global Delegation</image:title>
-      <image:caption>Presenting tech metrics at ESG Summit.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#gallery-esg-2</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/ESG Global/1742578282732.jpeg</image:loc>
-      <image:title>ESG Analytics Demo</image:title>
-      <image:caption>Demonstrating ESG software to delegates.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#gallery-imc-1</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/IMC/1763044187915.jpeg</image:loc>
-      <image:title>India Mobile Congress Demo</image:title>
-      <image:caption>Exhibiting AI software at IMC Congress.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#gallery-imc-2</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/IMC/1763044191469.jpeg</image:loc>
-      <image:title>IMC Innovation Showcase</image:title>
-      <image:caption>Demonstrating intelligent automation tools.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#gallery-college-1</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/College/1762955646604.jpeg</image:loc>
-      <image:title>Hackathon Leadership</image:title>
-      <image:caption>Leading technical developer teams.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.bhushanpadghan.online/#gallery-college-2</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://www.bhushanpadghan.online/work/College/1742578291400.jpeg</image:loc>
-      <image:title>Innovation Award</image:title>
-      <image:caption>Receiving technology recognition award.</image:caption>
-    </image:image>
   </url>
 </urlset>
