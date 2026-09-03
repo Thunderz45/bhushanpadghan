@@ -2,7 +2,7 @@ import React from 'react';
 import { portfolioData } from '../data/portfolioData';
 import { Linkedin, Github, Youtube, Instagram, Mail } from 'lucide-react';
 
-export const Footer = () => {
+export const Footer = ({ onNavigate }) => {
   return (
     <footer className="bg-[#050505] border-t border-white/10 py-10 sm:py-14 font-mono text-xs text-neutral-400">
       <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-14 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -11,7 +11,11 @@ export const Footer = () => {
         <div className="flex flex-col items-center md:items-start gap-1 text-center md:text-left">
           <a
             href="#intro"
-            className="font-serif italic text-lg sm:text-xl text-white tracking-tight normal-case hover:text-neutral-300 transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              if (onNavigate) onNavigate('home');
+            }}
+            className="font-serif italic text-lg sm:text-xl text-white tracking-tight normal-case hover:text-neutral-300 transition-colors cursor-pointer"
           >
             Bhushan Padghan
           </a>

@@ -10,11 +10,15 @@ const NAV_ITEMS = [
   { label: 'GALLERY',   href: '#gallery' },
 ];
 
-export const Navbar = () => {
+export const Navbar = ({ currentView = 'home', onNavigate }) => {
   const [active, setActive] = useState('INTRO');
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    if (currentView === 'youtube') {
+      setActive('YOUTUBE');
+      return;
+    }
     const handler = () => {
       const sections = NAV_ITEMS.map((n) => ({
         label: n.label,
@@ -29,7 +33,7 @@ export const Navbar = () => {
     };
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
-  }, []);
+  }, [currentView]);
 
   /* Lock body scroll when mobile menu is open */
   useEffect(() => {
@@ -43,6 +47,11 @@ export const Navbar = () => {
   const handleNavClick = (label, href) => {
     setActive(label);
     setIsOpen(false);
+    if (label === 'YOUTUBE') {
+      if (onNavigate) onNavigate('youtube');
+    } else {
+      if (onNavigate) onNavigate('home');
+    }
   };
 
   return (
@@ -61,8 +70,12 @@ export const Navbar = () => {
           {/* ── Wordmark (upper-left, italic serif) */}
           <a
             href="#intro"
-            onClick={() => setIsOpen(false)}
-            className="font-serif italic text-white text-lg sm:text-xl font-normal tracking-tight hover:text-neutral-300 transition-colors pointer-events-auto shrink-0 z-50"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen(false);
+              if (onNavigate) onNavigate('home');
+            }}
+            className="font-serif italic text-white text-lg sm:text-xl font-normal tracking-tight hover:text-neutral-300 transition-colors pointer-events-auto shrink-0 z-50 cursor-pointer"
             style={{ lineHeight: 1 }}
           >
             Bhushan Padghan
@@ -72,13 +85,22 @@ export const Navbar = () => {
           <nav className="hidden sm:flex items-center gap-5 sm:gap-7 font-mono pointer-events-auto">
 
             {NAV_ITEMS.map(({ label, href }) => {
-              const isActive = active === label;
+              const isActive = (currentView === 'youtube' && label === 'YOUTUBE') || (currentView === 'home' && active === label);
               return (
                 <a
                   key={label}
                   href={href}
-                  onClick={() => setActive(label)}
-                  className="relative flex items-center gap-1.5 group transition-colors"
+                  onClick={(e) => {
+                    if (label === 'YOUTUBE') {
+                      e.preventDefault();
+                      handleNavClick(label, href);
+                    } else if (currentView !== 'home') {
+                      handleNavClick(label, href);
+                    } else {
+                      setActive(label);
+                    }
+                  }}
+                  className="relative flex items-center gap-1.5 group transition-colors cursor-pointer"
                   style={{ textDecoration: 'none' }}
                 >
                   {/* Dot bullet */}
