@@ -71,6 +71,55 @@ const SKILLS = [
   },
 ];
 
+/* ── Startup Ventures Data ── */
+const STARTUPS = [
+  {
+    id: 1,
+    name: 'Pixel Studio X',
+    tagline: 'Creative Technology Studio',
+    badge: 'VENTURE #1',
+    logo: '/work/startups/startup_logo_1.png',
+    desc: 'A creative technology studio building digital products, brands, and innovative solutions.',
+    url: 'https://www.pixelstudiox.in/tools',
+  },
+  {
+    id: 2,
+    name: 'CelestialPixel',
+    tagline: 'Digital Marketing Agency',
+    badge: 'VENTURE #2',
+    logo: '/work/startups/startup_logo_2.png',
+    desc: 'A digital marketing agency helping businesses grow through branding, content, websites, and marketing.',
+    url: 'https://www.celestialpixel.in',
+  },
+  {
+    id: 3,
+    name: 'LeadFlow',
+    tagline: 'Smart Lead-Generation Platform',
+    badge: 'VENTURE #3',
+    logo: '/work/startups/startup_logo_3.jpg',
+    desc: 'A smart lead-generation platform that helps businesses discover, analyze, and convert potential clients.',
+    url: 'https://leadflow.pixelstudiox.in',
+  },
+  {
+    id: 4,
+    name: 'PixelCanvas',
+    tagline: 'Visual Content Platform',
+    badge: 'VENTURE #4',
+    logo: '/work/startups/startup_logo_4.jpg',
+    desc: 'A creative platform for designing, generating, and managing visual content with modern digital tools.',
+    url: 'https://canvas.pixelstudiox.in',
+  },
+  {
+    id: 5,
+    name: 'PixelCode',
+    tagline: 'Development Platform',
+    badge: 'VENTURE #5',
+    logo: '/work/startups/startup_logo_5.png',
+    desc: 'A development-focused platform for building websites, applications, automations, and software solutions.',
+    url: 'https://code.pixelstudiox.in',
+  },
+];
+
 /* ── Scroll-scrubbed word-by-word reveal for left description ── */
 const DESCRIPTION = `I believe great products are not just built, they are thoughtfully created to solve real problems and deliver meaningful experiences. My work lies at the intersection of technology, data, and entrepreneurship, where technology enables innovation, data drives better decisions, and entrepreneurship turns ideas into solutions that create real-world impact.`;
 
@@ -193,6 +242,105 @@ function SkillCard({ skill, index }) {
   );
 }
 
+/* ── Downward Startup Left-Scrolling Marquee ── */
+function StartupMarquee() {
+  const marqueeItems = [...STARTUPS, ...STARTUPS, ...STARTUPS, ...STARTUPS];
+
+  return (
+    <div className="mt-16 sm:mt-24 pt-16 border-t border-white/10 pb-16 overflow-hidden relative">
+      
+      {/* Header for Startup Section */}
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-14 mb-10">
+        <div>
+          <motion.p
+            initial={{ opacity: 0, x: -15 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="font-mono text-white/40 text-[11px] tracking-[0.35em] uppercase mb-2"
+          >
+            STARTUP
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-sans text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-white"
+          >
+            Startup <span className="font-serif italic font-normal text-white/80">Ventures & Ecosystem</span>
+          </motion.h2>
+        </div>
+      </div>
+
+      {/* Fade Gradients on edges for smooth infinite loop visual */}
+      <div className="absolute left-0 top-36 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-36 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
+
+      {/* Infinite Non-Stop Left-Scrolling Container */}
+      <div className="w-full overflow-hidden py-4">
+        <motion.div
+          className="flex gap-6 w-max"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 30,
+              ease: 'linear',
+            },
+          }}
+        >
+          {marqueeItems.map((startup, idx) => (
+            <motion.a
+              key={`${startup.id}-${idx}`}
+              href={startup.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="w-[280px] sm:w-[340px] shrink-0 p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/30 backdrop-blur-md transition-all duration-300 group flex flex-col justify-between block cursor-pointer"
+            >
+              <div>
+                {/* Logo Box & Category Badge */}
+                <div className="flex items-center justify-between gap-4 mb-5">
+                  <div className="w-14 h-14 rounded-xl overflow-hidden bg-black/60 border border-white/15 p-2 flex items-center justify-center group-hover:border-white/40 transition-colors shadow-lg">
+                    <img
+                      src={startup.logo}
+                      alt={startup.name}
+                      className="w-full h-full object-contain rounded-lg"
+                    />
+                  </div>
+                  <span className="font-mono text-[10px] tracking-wider uppercase text-white/60 bg-white/10 px-3 py-1 rounded-full border border-white/10">
+                    {startup.badge}
+                  </span>
+                </div>
+
+                {/* Title & Tagline */}
+                <h3 className="font-sans text-xl font-medium text-white group-hover:text-white transition-colors mb-1">
+                  {startup.name}
+                </h3>
+                <p className="font-mono text-xs text-white/50 mb-3">
+                  {startup.tagline}
+                </p>
+
+                {/* Description */}
+                <p className="font-sans text-xs text-white/60 leading-relaxed font-light">
+                  {startup.desc}
+                </p>
+              </div>
+
+              {/* Bottom Subtle Indicator */}
+              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-white/40 group-hover:text-white transition-colors">
+                <span>VISIT {startup.name.toUpperCase()}</span>
+                <span className="group-hover:translate-x-1 transition-transform">↗</span>
+              </div>
+            </motion.a>
+          ))}
+        </motion.div>
+      </div>
+
+    </div>
+  );
+}
+
 export const WhatIDoSection = () => {
   const labelRef = useRef(null);
   const labelInView = useInView(labelRef, { once: true, margin: '-60px' });
@@ -237,6 +385,10 @@ export const WhatIDoSection = () => {
 
         </div>
       </div>
+
+      {/* ── DOWNWARD SECTION: STARTUP LEFT SCROLLING MARQUEE ── */}
+      <StartupMarquee />
     </section>
   );
 };
+
