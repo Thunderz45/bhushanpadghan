@@ -26,7 +26,7 @@ export const portfolioData = {
     github: "https://github.com/Thunderz45",
     youtube: "https://www.youtube.com/@bhushanpadghan9647",
     instagram: "https://www.instagram.com/bhushanpatil_045/",
-    website: "https://bhushanpadghan.online",
+    website: "https://www.bhushanpadghan.online",
     available: true,
     availableText: "Available for AI Contracts & Tech Leadership"
   },
